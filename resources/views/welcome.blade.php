@@ -14,8 +14,23 @@
            Portoflio
         </h1>
 
-        <p class="col-md-8 fs-4">This a preset package with Bootstrap 5 views for laravel projects including laravel breeze/blade. It works from laravel 9.x to the latest release 10.x</p>
-        <a href="https://packagist.org/packages/pacificdev/laravel_9_preset" class="btn btn-primary btn-lg" type="button">Documentation</a>
+        <form method="POST" action="/projects">
+            
+                {{ csrf_field() }}
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="name" required>
+                </div>
+                <div>
+                    <label for="client">Client:</label>
+                    <input type="text" id="client" name="client" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <button type="submit">Create Project</button>
+        </form>
     </div>
 </div>
 

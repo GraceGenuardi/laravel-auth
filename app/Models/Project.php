@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    use HasFactory;
+    Schema::create('projects', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('client');
+        $table->text('description');
+        $table->timestamps();
+    });
 }

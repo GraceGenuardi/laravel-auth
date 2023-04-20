@@ -25,7 +25,13 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        $project = new Project;
+        $project->name = $request->input('name');
+        $project->client = $request->input('client');
+        $project->description = $request->input('description');
+        $project->save();
+
+    return redirect('/projects')->with('success', 'Project created successfully!');
     }
 
     /**
@@ -47,7 +53,8 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show', ['post' => $post]);    
     }
 
     /**
