@@ -10,27 +10,32 @@
                 </g>
             </svg>
         </div>
-        <h1 class="display-5 fw-bold">
-           Portoflio
+        <h1 class="display-5 fw-bold mb-5">
+          Crea il tuo progetto!
         </h1>
 
         <form method="POST" action="/projects">
-            
+
                 {{ csrf_field() }}
-                <div>
+                <div class="m-3">
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="name" required>
                 </div>
-                <div>
+
+                <div class="m-3">
                     <label for="client">Client:</label>
                     <input type="text" id="client" name="client" required>
                 </div>
-                <div>
+
+                <div class="m-3">
                     <label for="description">Description:</label>
                     <textarea id="description" name="description" required></textarea>
                 </div>
-                <button type="submit">Create Project</button>
+
+                <button type="submit" class="btn btn-primary m-4">Create Project</button>
         </form>
+
+
     </div>
 </div>
 
